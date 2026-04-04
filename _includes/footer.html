@@ -1,10 +1,24 @@
 <footer class="site-footer">
   <div class="site-footer__inner">
+    <div class="site-footer__brand">
+      <a class="site-footer__logo" href="{{ '/' | relative_url }}">
+        <img class="site-logo__img site-logo__img--footer" src="{{ '/assets/images/logo.png' | relative_url }}" alt="IvyFeeder Inc." width="240" height="48" loading="lazy" decoding="async" />
+      </a>
+      <p class="site-footer__tagline">{{ site.tagline | default: 'Indie mobile app studio' }}</p>
+    </div>
+    <nav class="site-footer__nav" aria-label="Footer">
+      <p class="site-footer__nav-heading">Quick links</p>
+      <ul class="site-footer__list">
+        <li><a href="{{ '/' | relative_url }}">Home</a></li>
+        <li><a href="{{ '/blog/' | relative_url }}">Blog</a></li>
+        <li><a href="{{ '/about/' | relative_url }}">About</a></li>
+        <li><a href="{{ '/contact/' | relative_url }}">Contact</a></li>
+        <li><a href="{{ '/privacy-policy/' | relative_url }}">Privacy Policy</a></li>
+        <li><a href="{{ '/feed.xml' | relative_url }}">RSS feed</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="site-footer__bottom">
     <p class="site-footer__copy">&copy; {{ 'now' | date: '%Y' }} {{ site.title }}. All rights reserved.</p>
-    <p class="site-footer__links">
-      <a href="{{ '/privacy-policy/' | relative_url }}">Privacy Policy</a>
-      <span class="site-footer__sep" aria-hidden="true">·</span>
-      <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
-    </p>
   </div>
 </footer>
