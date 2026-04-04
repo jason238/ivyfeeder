@@ -39,8 +39,8 @@ social:
   links:
     - https://github.com/ivyfeeder
 
-# Contact form — https://formspree.io — paste your form endpoint URL
-formspree_contact_url: "https://formspree.io/f/YOUR_FORM_ID"
+# Contact form — https://formspree.io — endpoint URL (form must be active in Formspree dashboard to receive email)
+formspree_contact_url: "https://formspree.io/f/mreoydbd"
 
 # Blog posts: set per-file `permalink: /apps/your-slug/blog/post-slug/` and `app:` in front matter.
 # (GitHub Pages Jekyll does not support custom :app placeholders in global permalink templates.)
