@@ -5,6 +5,9 @@
         <img class="site-logo__img site-logo__img--footer" src="{{ '/assets/images/logo.png' | relative_url }}" alt="IvyFeeder Inc." width="400" height="80" loading="lazy" decoding="async" />
       </a>
       <p class="site-footer__tagline">{{ site.tagline | default: 'Indie mobile app studio' }}</p>
+      <div class="site-footer__follow followit-site">
+        {% include followit-form.html %}
+      </div>
     </div>
     <nav class="site-footer__nav" aria-label="Footer">
       <p class="site-footer__nav-heading">Quick links</p>
@@ -14,7 +17,6 @@
         <li><a href="{{ '/about/' | relative_url }}">About</a></li>
         <li><a href="{{ '/contact/' | relative_url }}">Contact</a></li>
         <li><a href="{{ '/privacy-policy/' | relative_url }}">Privacy Policy</a></li>
-        <li><a href="{{ '/feed.xml' | relative_url }}">RSS feed</a></li>
       </ul>
     </nav>
   </div>
