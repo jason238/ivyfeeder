@@ -1,0 +1,18 @@
+---
+layout: null
+permalink: /feed/
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RSS / Atom feed — {{ site.title }}</title>
+  <meta http-equiv="refresh" content="0; url={{ '/feed.xml' | absolute_url }}">
+  <link rel="alternate" type="application/atom+xml" title="{{ site.title | xml_escape }}" href="{{ '/feed.xml' | relative_url }}">
+  <link rel="canonical" href="{{ '/feed.xml' | absolute_url }}">
+</head>
+<body>
+  <p>If you are not redirected, open the <a href="{{ '/feed.xml' | relative_url }}">Atom feed (feed.xml)</a> in your reader.</p>
+</body>
+</html>
