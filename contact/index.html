@@ -1,0 +1,50 @@
+---
+layout: page
+title: Contact us
+subtitle: We’d love to hear from you—questions, feedback, or just a quick hello.
+description: >-
+  Send a message to IvyFeeder Inc. using our secure form (powered by Formspree).
+  We read every note and reply when we can.
+permalink: /contact/
+---
+
+<p class="contact-lede">
+  Running a small studio means we actually read what you send. Whether you’re stuck in an app,
+  curious about a partnership, or want to say your piece about a blog post—drop us a line below.
+  No backend on our side: the form delivers straight to our inbox.
+</p>
+
+<form
+  class="contact-form"
+  action="{{ site.formspree_contact_url }}"
+  method="POST"
+>
+  <input type="hidden" name="_subject" value="Message from ivyfeeder.com contact form">
+  <input type="text" name="_gotcha" class="contact-form__honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+  <div class="contact-form__field">
+    <label class="contact-form__label" for="contact-name">Name</label>
+    <input class="contact-form__input" type="text" id="contact-name" name="name" autocomplete="name" required placeholder="Your name">
+  </div>
+
+  <div class="contact-form__field">
+    <label class="contact-form__label" for="contact-email">Email</label>
+    <input class="contact-form__input" type="email" id="contact-email" name="email" autocomplete="email" required placeholder="you@example.com">
+  </div>
+
+  <div class="contact-form__field">
+    <label class="contact-form__label" for="contact-subject">Subject</label>
+    <input class="contact-form__input" type="text" id="contact-subject" name="subject" required placeholder="What’s this about?">
+  </div>
+
+  <div class="contact-form__field">
+    <label class="contact-form__label" for="contact-message">Message</label>
+    <textarea class="contact-form__textarea" id="contact-message" name="message" rows="6" required placeholder="Say hello, ask a question, or share feedback…"></textarea>
+  </div>
+
+  <p class="contact-form__note">
+    This form uses <a href="https://formspree.io" rel="noopener noreferrer" target="_blank">Formspree</a>—you’ll get a quick confirmation, then we’ll reply from our team email when we can.
+  </p>
+
+  <button class="btn btn--primary contact-form__submit" type="submit">Send message</button>
+</form>

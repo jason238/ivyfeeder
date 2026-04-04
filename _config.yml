@@ -1,0 +1,77 @@
+# IvyFeeder Inc. — Jekyll site for GitHub Pages
+# Docs: https://docs.github.com/pages/configuring-a-custom-domain-for-your-github-pages-site
+
+# Site identity (used sitewide and by jekyll-seo-tag)
+title: IvyFeeder Inc.
+# Short phrase for <title> suffix on pages that use the site default (jekyll-seo-tag)
+tagline: Indie mobile app studio
+# Default meta description (keep concise; page-specific `description` overrides per URL)
+description: >-
+  Indie mobile app studio — useful iOS & Android apps, daily blog posts, and store links from IvyFeeder Inc.
+url: "https://ivyfeeder.com"
+baseurl: ""
+
+# Default Open Graph / social preview image (path relative to site root)
+logo: /assets/blog/og-sample.svg
+image:
+  path: /assets/blog/og-sample.svg
+  height: 630
+  width: 1200
+  alt: IvyFeeder Inc. — indie mobile apps for iOS and Android
+
+# Author & representative Person (JSON-LD)
+author:
+  name: IvyFeeder Inc.
+  email: hello@ivyfeeder.com
+  twitter: ivyfeeder
+seo_person_name: IvyFeeder team
+
+# Language (timezone optional — omit on environments without tzinfo-data, e.g. some Windows setups)
+lang: en
+
+# jekyll-seo-tag: Twitter & social; also emits JSON-LD (BlogPosting on posts, WebSite/WebPage elsewhere) + canonical links.
+twitter:
+  username: ivyfeeder
+  card: summary_large_image
+
+social:
+  name: IvyFeeder Inc.
+  links:
+    - https://github.com/ivyfeeder
+
+# Contact form — https://formspree.io — paste your form endpoint URL
+formspree_contact_url: "https://formspree.io/f/YOUR_FORM_ID"
+
+# Blog posts: set per-file `permalink: /apps/your-slug/blog/post-slug/` and `app:` in front matter.
+# (GitHub Pages Jekyll does not support custom :app placeholders in global permalink templates.)
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      lang: en
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: post
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: page

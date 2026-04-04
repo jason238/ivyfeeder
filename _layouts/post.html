@@ -1,0 +1,76 @@
+---
+layout: default
+---
+{% assign author_name = page.author | default: site.author.name %}
+{% assign prev_post = nil %}
+{% assign next_post = nil %}
+{% if page.app %}
+{% assign siblings = site.posts | where_exp: "p", "p.app == page.app" | sort: "date" %}
+{% assign seen = false %}
+{% for p in siblings %}
+  {% if seen == false and p.url == page.url %}
+    {% assign seen = true %}
+  {% elsif seen == true %}
+    {% assign next_post = p %}
+    {% break %}
+  {% else %}
+    {% assign prev_post = p %}
+  {% endif %}
+{% endfor %}
+{% endif %}
+<article class="post h-entry" itemscope itemtype="https://schema.org/BlogPosting">
+  <header class="post-header">
+    <p class="post-meta">
+      <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+        {{ page.date | date: "%B %-d, %Y" }}
+      </time>
+      <span class="post-meta__sep" aria-hidden="true">·</span>
+      <span class="post-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+        <span itemprop="name">{{ author_name }}</span>
+      </span>
+      {% if page.app %}
+      <span class="post-meta__sep" aria-hidden="true">·</span>
+      <span class="post-app">
+        <a href="{{ '/apps/' | append: page.app | append: '/blog/' | relative_url }}">{{ page.app | replace: '-', ' ' | capitalize }}</a>
+      </span>
+      {% endif %}
+    </p>
+    <h1 class="post-title p-name" itemprop="headline">{{ page.title }}</h1>
+    {% if page.description %}
+    <p class="post-description p-summary" itemprop="description">{{ page.description }}</p>
+    {% endif %}
+  </header>
+
+  {% if page.image %}
+  <figure class="post-featured">
+    <img class="post-featured__img" src="{{ page.image | relative_url }}" alt="{{ page.image_alt | default: page.title | escape }}" width="1200" height="630" loading="eager" itemprop="image">
+  </figure>
+  {% else %}
+  <div class="post-featured post-featured--placeholder" role="img" aria-label="Featured image placeholder">
+    <span class="post-featured__ph-text">Featured image — set <code>image</code> in front matter</span>
+  </div>
+  {% endif %}
+
+  <div class="post-content prose e-content" itemprop="articleBody">
+    {{ content }}
+  </div>
+
+  {% if page.app %}
+  {% if prev_post or next_post %}
+  <nav class="post-nav" aria-label="Adjacent posts in this app">
+    {% if prev_post %}
+    <a class="post-nav__link post-nav__link--prev" href="{{ prev_post.url | relative_url }}" rel="prev">
+      <span class="post-nav__dir">Previous</span>
+      <span class="post-nav__title">{{ prev_post.title }}</span>
+    </a>
+    {% endif %}
+    {% if next_post %}
+    <a class="post-nav__link post-nav__link--next" href="{{ next_post.url | relative_url }}" rel="next">
+      <span class="post-nav__dir">Next</span>
+      <span class="post-nav__title">{{ next_post.title }}</span>
+    </a>
+    {% endif %}
+  </nav>
+  {% endif %}
+  {% endif %}
+</article>

@@ -1,0 +1,48 @@
+---
+layout: page
+title: About us
+subtitle: A small indie studio building mobile apps we actually want to use ourselves.
+description: >-
+  Meet IvyFeeder Inc.—a tiny team of developers passionate about useful iOS and Android apps.
+  Read our philosophy and explore the apps we ship.
+permalink: /about/
+---
+
+<section class="about-section" aria-labelledby="about-intro-heading">
+  <h2 id="about-intro-heading">Who we are</h2>
+  <p>
+    We’re a <strong>small team</strong>—just a handful of developers who love turning ideas into apps people can hold in their hands.
+    We’re not chasing hype; we care about <strong>useful, well-made mobile software</strong> that respects your time and your privacy.
+    This site is our home base: a quiet corner of the internet where we share what we build and write almost daily on each app’s blog.
+  </p>
+</section>
+
+<section class="about-section" aria-labelledby="about-philosophy-heading">
+  <h2 id="about-philosophy-heading">How we build</h2>
+  <p>
+    Our development philosophy is simple: <strong>ship often, listen closely, and polish the details</strong>.
+    We iterate in short loops, keep our stack boring where it helps (hello, static sites and Markdown), and treat every review and email as a chance to improve.
+    We believe small teams can punch above their weight when they stay curious, honest, and a little bit stubborn about quality.
+  </p>
+</section>
+
+<section class="about-section" aria-labelledby="about-apps-heading">
+  <h2 id="about-apps-heading">Apps we’ve built</h2>
+  <p>Every product gets its own landing page and blog—tap through to learn more:</p>
+  <ul class="about-app-list">
+    {% for app in site.data.apps %}
+    <li>
+      <a href="{{ app.url | relative_url }}">{{ app.name }}</a>
+      {% if app.description %}<span class="muted"> — {{ app.description }}</span>{% endif %}
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+
+<section class="about-section about-section--closing" aria-labelledby="about-thanks-heading">
+  <h2 id="about-thanks-heading">Thanks for stopping by</h2>
+  <p>
+    Whether you found us through search, the App Store, or a friend’s recommendation—we’re glad you’re here.
+    Questions or partnership ideas? Head to <a href="{{ '/contact/' | relative_url }}">Contact</a>; we read every message when we can.
+  </p>
+</section>

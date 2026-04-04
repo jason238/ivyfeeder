@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f6b5f"/>
+      <stop offset="100%" style="stop-color:#121826"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <text x="600" y="300" text-anchor="middle" fill="#f6f4ef" font-family="system-ui,sans-serif" font-size="42" font-weight="700">OG image placeholder</text>
+  <text x="600" y="360" text-anchor="middle" fill="#c9c2b4" font-family="system-ui,sans-serif" font-size="22">1200×630  replace with a real export</text>
+</svg>

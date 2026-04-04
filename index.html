@@ -1,12 +1,85 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello, World!</title>
-</head>
-<body>
-    <h1>Hello, World!</h1>
-    <p>The website is in maintenance, please check back later.</p>
-</body>
-</html>
+---
+layout: home
+title: IvyFeeder Inc.
+description: >-
+  Indie mobile studio building iOS and Android apps for a global audience.
+  Explore our apps, read the latest from our blog, and download on the App Store and Google Play.
+image: /assets/blog/og-sample.svg
+image_alt: IvyFeeder Inc. — indie mobile apps for iOS and Android
+permalink: /
+---
+
+<section class="home-hero" aria-labelledby="hero-heading">
+  <div class="home-hero__inner">
+    <p class="home-hero__eyebrow">Indie mobile studio</p>
+    <h1 id="hero-heading" class="home-hero__title">Small team. Real apps. Shipped for the world.</h1>
+    <p class="home-hero__lead">
+      I’m an independent developer behind IvyFeeder—building focused iOS and Android products,
+      writing almost daily on our app blogs, and keeping this site fast and honest. Replace this line with your own story when you’re ready.
+    </p>
+  </div>
+</section>
+
+<section class="home-section home-featured" id="featured-apps" aria-labelledby="featured-heading">
+  <div class="home-section__head">
+    <h2 id="featured-heading" class="home-section__title">Featured apps</h2>
+    <p class="home-section__intro">Two products we’re proud to ship—swap names, copy, and icons with your real releases.</p>
+  </div>
+  <div class="app-tile-grid">
+    {% for app in site.data.apps %}
+    <article class="app-tile">
+      <div class="app-tile__icon" aria-hidden="true">
+        {% include icon-app-tile.html %}
+      </div>
+      <h3 class="app-tile__name">{{ app.name }}</h3>
+      <p class="app-tile__desc">{{ app.description }}</p>
+      <a class="btn btn--primary" href="{{ app.url | relative_url }}">Learn more</a>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="home-section home-latest" id="latest-posts" aria-labelledby="latest-heading">
+  <div class="home-section__head">
+    <h2 id="latest-heading" class="home-section__title">Latest blog posts</h2>
+    <p class="home-section__intro">Fresh articles from our app blogs—newest first.</p>
+  </div>
+  {% if site.posts.size == 0 %}
+  <p class="home-latest__empty muted">No posts yet. Add Markdown files under <code>_posts/</code> to see them here.</p>
+  {% else %}
+  <ul class="home-latest__list">
+    {% for post in site.posts limit:3 %}
+    <li class="home-latest__item">
+      <article class="home-latest__post">
+        <p class="home-latest__meta">
+          <time class="home-latest__time" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
+        </p>
+        <h3 class="home-latest__post-title">
+          <a class="home-latest__link" href="{{ post.url | relative_url }}" rel="bookmark">{{ post.title }}</a>
+        </h3>
+        {% assign teaser = post.description | default: post.excerpt | strip_html | truncate: 160 | strip %}
+        {% if teaser != "" %}
+        <p class="home-latest__excerpt">{{ teaser }}</p>
+        {% endif %}
+      </article>
+    </li>
+    {% endfor %}
+  </ul>
+  <p class="home-latest__more">
+    <a class="home-latest__all" href="{{ '/blog/' | relative_url }}">View all posts</a>
+  </p>
+  {% endif %}
+</section>
+
+<section class="home-cta" aria-labelledby="cta-heading">
+  <div class="home-cta__inner">
+    <h2 id="cta-heading" class="home-cta__title">Explore what we ship</h2>
+    <p class="home-cta__text">
+      Browse each app’s page for screenshots and store links, or dive into the blog for updates, tips, and SEO-friendly content you can publish every day.
+    </p>
+    <div class="home-cta__actions">
+      <a class="btn btn--primary" href="#featured-apps">See our apps</a>
+      <a class="btn btn--ghost" href="{{ '/blog/' | relative_url }}">Read the blog</a>
+    </div>
+  </div>
+</section>

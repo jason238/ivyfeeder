@@ -1,0 +1,13 @@
+# Featured apps (home + nav). Add description for each card on the homepage.
+- name: Sample App
+  slug: sample-app
+  url: /apps/sample-app/
+  description: Full app landing template with hero, features, screenshots, and blog preview.
+- name: App One
+  slug: app-one
+  url: /apps/app-one/
+  description: A polished placeholder—replace with your hero app’s one-line pitch.
+- name: App Two
+  slug: app-two
+  url: /apps/app-two/
+  description: Second demo product—perfect for testing layouts before you go live.
