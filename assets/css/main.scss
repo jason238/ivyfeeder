@@ -33,6 +33,8 @@ $font-body: "Source Sans 3", "Segoe UI", sans-serif;
   --color-warm-soft: rgba(194, 65, 12, 0.12);
   --color-header-text: #f8fafc;
   --color-header-muted: #94a3b8;
+  /* Header + footer share one chrome gradient so raster logos using mix-blend-mode: lighten match */
+  --gradient-chrome: linear-gradient(165deg, var(--color-navy) 0%, var(--color-navy-soft) 100%);
   --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.06);
   --shadow-md: 0 4px 14px rgba(15, 23, 42, 0.08);
   --shadow-card: 0 12px 40px -12px rgba(15, 23, 42, 0.12), 0 4px 14px -4px rgba(15, 23, 42, 0.06);
@@ -114,7 +116,7 @@ h4 {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: linear-gradient(165deg, var(--color-navy) 0%, var(--color-navy-soft) 100%);
+  background: var(--gradient-chrome);
   border-bottom: 1px solid rgba(148, 163, 184, 0.22);
   box-shadow: var(--shadow-md);
 }
@@ -157,8 +159,13 @@ h4 {
 }
 
 .site-logo__img--header {
-  height: 54px;
-  max-width: min(100%, 340px);
+  height: 76px;
+  max-width: min(100%, 520px);
+}
+
+/* Black logo background: same blend + same --gradient-chrome as nav/footer for a consistent look */
+.site-logo__img--header,
+.site-logo__img--footer {
   mix-blend-mode: lighten;
 }
 
@@ -315,8 +322,13 @@ h4 {
   }
 
   .site-logo__img--header {
-    height: 48px;
-    max-width: min(100%, 300px);
+    height: 62px;
+    max-width: min(100%, 440px);
+  }
+
+  .site-logo__img--footer {
+    height: 62px;
+    max-width: min(100%, 440px);
   }
 
   .site-nav {
@@ -354,8 +366,11 @@ h4 {
 .site-footer {
   flex-shrink: 0;
   margin-top: auto;
-  border-top: 1px solid rgba(15, 23, 42, 0.5);
-  background: linear-gradient(165deg, #0b1220 0%, var(--color-navy) 42%, #020617 100%);
+  position: relative;
+  z-index: 0;
+  isolation: isolate;
+  border-top: 1px solid rgba(148, 163, 184, 0.22);
+  background: var(--gradient-chrome);
   color: var(--color-header-muted);
   box-shadow: 0 -8px 32px rgba(15, 23, 42, 0.12);
 }
@@ -382,11 +397,14 @@ h4 {
   min-width: 0;
 }
 
+/* Match header .site-logo: no extra background on the link — the image must blend against the real bar/footer paint */
 .site-footer__logo {
   display: inline-flex;
   align-items: center;
   text-decoration: none;
   line-height: 0;
+  flex-shrink: 0;
+  border-radius: var(--radius-sm);
 
   &:hover .site-logo__img {
     opacity: 0.94;
@@ -400,16 +418,9 @@ h4 {
 }
 
 .site-logo__img--footer {
-  height: 40px;
-  max-width: min(100%, 280px);
-  mix-blend-mode: lighten;
-}
-
-@media (max-width: 40rem) {
-  .site-logo__img--footer {
-    height: 36px;
-    max-width: min(100%, 260px);
-  }
+  display: block;
+  height: 76px;
+  max-width: min(100%, 520px);
 }
 
 .site-footer__tagline {
