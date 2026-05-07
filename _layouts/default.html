@@ -10,6 +10,7 @@
   <link rel="dns-prefetch" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  {% comment %}Syne includes wght 800 (Extra Bold) for H1/H2; Source Sans 3 for body.{% endcomment %}
   {% assign fonts_href = "https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Syne:wght@500;600;700;800&display=swap" | replace: '&', '&amp;' %}
   <link rel="preload" href="{{ fonts_href }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="{{ fonts_href }}"></noscript>

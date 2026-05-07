@@ -2,7 +2,7 @@
 # Main stylesheet — IvyFeeder theme (Jekyll compiles SCSS → CSS)
 ---
 
-// Typography: Syne (display) + Source Sans 3 (body) — loaded in default.html
+// Typography: Syne (display, incl. wght 800) + Source Sans 3 (body) — Google Fonts in default.html
 $font-display: "Syne", system-ui, sans-serif;
 $font-body: "Source Sans 3", "Segoe UI", sans-serif;
 
@@ -79,12 +79,19 @@ body.site {
     radial-gradient(ellipse 90% 50% at 100% 50%, rgba(14, 116, 144, 0.05), transparent 45%);
 }
 
-// Single subtle gradient for depth (teal tint, not purple)
+// Display headings: Syne Extra Bold (800), tight tracking
 h1,
-h2,
+h2 {
+  font-family: $font-display;
+  font-weight: 800;
+  color: var(--color-navy);
+  letter-spacing: -0.02em;
+  line-height: 1.22;
+}
+
 h3,
 h4 {
-  font-family: var(--font-display);
+  font-family: $font-display;
   font-weight: 700;
   color: var(--color-navy);
   letter-spacing: -0.02em;
@@ -650,12 +657,32 @@ h4 {
 
 .home-hero__title {
   margin: 0 0 1rem;
+  font-family: "Syne", system-ui, sans-serif;
   font-size: clamp(2rem, 5vw, 2.75rem);
   font-weight: 800;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.02em;
   line-height: 1.1;
   color: var(--color-navy);
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.85), 0 20px 50px rgba(37, 99, 235, 0.1);
+
+  @supports (background-clip: text) or (-webkit-background-clip: text) {
+    background-image: linear-gradient(
+      108deg,
+      #020617 0%,
+      #0f172a 45%,
+      #334155 72%,
+      #1e293b 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+
+  @media (forced-colors: active) {
+    background: none !important;
+    -webkit-text-fill-color: unset !important;
+    color: CanvasText !important;
+  }
 }
 
 .home-hero__lead {
@@ -677,7 +704,7 @@ h4 {
   margin: 0 0 0.5rem;
   font-size: clamp(1.35rem, 2.5vw, 1.6rem);
   font-weight: 800;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.02em;
   color: var(--color-navy);
 }
 
@@ -919,7 +946,7 @@ h4 {
   margin: 0 0 0.65rem;
   font-size: clamp(1.25rem, 2.5vw, 1.5rem);
   font-weight: 800;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.02em;
   color: var(--color-navy);
 }
 
@@ -997,7 +1024,7 @@ h4 {
   margin: 0 0 0.5rem;
   font-size: clamp(1.85rem, 4vw, 2.5rem);
   font-weight: 800;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.02em;
   line-height: 1.1;
 }
 
@@ -1101,7 +1128,7 @@ h4 {
   margin: 0 0 1.25rem;
   font-size: clamp(1.35rem, 2.5vw, 1.55rem);
   font-weight: 800;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.02em;
   color: var(--color-navy);
 }
 
@@ -1339,7 +1366,7 @@ h4 {
   margin: 0 0 0.35rem;
   font-size: clamp(1.25rem, 2.5vw, 1.45rem);
   font-weight: 800;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.02em;
   color: var(--color-navy);
 }
 
@@ -1500,7 +1527,7 @@ h4 {
   font-size: clamp(1.65rem, 3.5vw, 2.15rem);
   font-weight: 800;
   margin: 0 0 0.5rem;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.02em;
   color: var(--color-navy);
 }
 
@@ -1526,7 +1553,8 @@ h4 {
 
   h2 {
     font-size: 1.35rem;
-    font-weight: 700;
+    font-weight: 800;
+    letter-spacing: -0.02em;
     margin: 2rem 0 0.75rem;
     padding-top: 0.25rem;
     color: var(--color-navy);
@@ -1956,7 +1984,7 @@ h4 {
 .post-title {
   font-size: clamp(1.65rem, 3.5vw, 2.2rem);
   font-weight: 800;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.02em;
   margin: 0;
   line-height: 1.2;
   color: var(--color-navy);
