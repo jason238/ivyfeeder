@@ -517,12 +517,60 @@ h4 {
   border-top: 1px solid rgba(148, 163, 184, 0.15);
 }
 
+.site-footer__bottom-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: center;
+  column-gap: 1.25rem;
+  row-gap: 0.35rem;
+}
+
+@media (min-width: 36rem) {
+  .site-footer__bottom-inner {
+    justify-content: space-between;
+  }
+}
+
 .site-footer__copy {
   margin: 0;
   font-family: var(--font-body);
   font-size: 0.8125rem;
   color: #64748b;
   text-align: center;
+}
+
+@media (min-width: 36rem) {
+  .site-footer__copy {
+    text-align: left;
+  }
+}
+
+.site-footer__legal-link {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: #64748b;
+  text-decoration: none;
+  transition: color 0.15s ease, text-decoration-color 0.15s ease;
+
+  &:hover {
+    color: #94a3b8;
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+  }
+
+  &:focus-visible {
+    outline: 2px solid #5eead4;
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  &[aria-current="page"] {
+    color: #94a3b8;
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+  }
 }
 
 // ——— Home ———

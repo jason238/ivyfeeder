@@ -16,11 +16,13 @@
         <li><a href="{{ '/blog/' | relative_url }}">Blog</a></li>
         <li><a href="{{ '/about/' | relative_url }}">About</a></li>
         <li><a href="{{ '/contact/' | relative_url }}">Contact</a></li>
-        <li><a href="{{ '/privacy-policy/' | relative_url }}">Privacy Policy</a></li>
       </ul>
     </nav>
   </div>
   <div class="site-footer__bottom">
-    <p class="site-footer__copy">&copy; {{ 'now' | date: '%Y' }} {{ site.title }}. All rights reserved.</p>
+    <div class="site-footer__bottom-inner">
+      <p class="site-footer__copy">&copy; {{ 'now' | date: '%Y' }} {{ site.title }}. All rights reserved.</p>
+      <a class="site-footer__legal-link" href="{{ '/privacy-policy/' | relative_url }}"{% if page.url contains 'privacy-policy' %} aria-current="page"{% endif %}>Privacy Policy</a>
+    </div>
   </div>
 </footer>
