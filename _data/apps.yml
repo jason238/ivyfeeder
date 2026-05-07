@@ -3,6 +3,10 @@
   slug: sample-app
   url: /apps/sample-app/
   description: Full app landing template with hero, features, screenshots, and blog preview.
+- name: Sample App (Copy)
+  slug: sample-app-copy
+  url: /apps/sample-app-copy/
+  description: A second copy of the full Sample App template—customize this one and keep the original as a reference.
 - name: App One
   slug: app-one
   url: /apps/app-one/
