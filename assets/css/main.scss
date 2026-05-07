@@ -229,6 +229,8 @@ h4 {
   position: relative;
 }
 
+// Panel wrapper: default block (zero in-flow height on desktop while <ul> is position:absolute)
+
 .nav-dropdown__summary {
   list-style: none;
   cursor: pointer;
@@ -358,9 +360,15 @@ h4 {
   }
 
   .site-nav__link {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
+    min-height: 2.75rem;
+    line-height: 1.25;
+    padding: 0.5rem 1rem;
     text-align: center;
+    box-sizing: border-box;
   }
 
   .site-nav__item--dropdown .nav-dropdown {
@@ -370,7 +378,11 @@ h4 {
   .nav-dropdown__summary {
     display: flex;
     width: 100%;
+    min-height: 2.75rem;
+    line-height: 1.25;
+    padding: 0.5rem 1rem;
     justify-content: center;
+    align-items: center;
     box-sizing: border-box;
   }
 
@@ -379,19 +391,85 @@ h4 {
     background: rgba(248, 250, 252, 0.1);
   }
 
+  // Accordion: push content below instead of overlaying (grid 0fr → 1fr)
+  .nav-dropdown__panel-anim {
+    display: grid;
+    grid-template-rows: 0fr;
+    width: 100%;
+    transition: grid-template-rows 0.32s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .nav-dropdown[open] .nav-dropdown__panel-anim {
+    grid-template-rows: 1fr;
+  }
+
+  .nav-dropdown__panel-anim > .nav-dropdown__panel {
+    overflow: hidden;
+    min-height: 0;
+  }
+
   .nav-dropdown__panel {
     position: static;
-    margin-top: 0.35rem;
+    margin-top: 0.25rem;
     width: 100%;
     min-width: 0;
     max-width: 100%;
-    box-shadow: var(--shadow-card);
-    border: 1px solid var(--color-border);
+    padding: 0.2rem 0;
     text-align: left;
+    background: rgba(30, 41, 59, 0.78);
+    border: 1px solid rgba(148, 163, 184, 0.22);
+    border-radius: var(--radius-sm);
+    box-shadow: none;
+    -webkit-backdrop-filter: blur(14px) saturate(1.15);
+    backdrop-filter: blur(14px) saturate(1.15);
+  }
+
+  .nav-dropdown__panel li {
+    margin: 0;
   }
 
   .nav-dropdown__link {
-    text-align: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 2.75rem;
+    line-height: 1.25;
+    padding: 0.5rem 1rem 0.5rem 1.85rem;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    text-align: left;
+    color: rgba(226, 232, 240, 0.92);
+    border-radius: var(--radius-sm);
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0.85rem;
+      top: 50%;
+      width: 0.3rem;
+      height: 0.3rem;
+      margin-top: -0.15rem;
+      border-radius: 50%;
+      background: rgba(148, 163, 184, 0.65);
+      pointer-events: none;
+    }
+
+    &:hover {
+      color: var(--color-header-text);
+      background: rgba(248, 250, 252, 0.08);
+    }
+
+    &:focus-visible {
+      outline: 2px solid #5eead4;
+      outline-offset: -2px;
+      color: var(--color-header-text);
+    }
+  }
+}
+
+@media (max-width: 52rem) and (prefers-reduced-motion: reduce) {
+  .nav-dropdown__panel-anim {
+    transition: none;
   }
 }
 

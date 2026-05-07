@@ -13,13 +13,15 @@
             <summary class="nav-dropdown__summary">
               <span class="nav-dropdown__label">Apps</span>
             </summary>
-            <ul class="nav-dropdown__panel" role="list">
-              {% for app in site.data.apps %}
-              <li>
-                <a class="nav-dropdown__link" href="{{ app.url | relative_url }}">{{ app.name }}</a>
-              </li>
-              {% endfor %}
-            </ul>
+            <div class="nav-dropdown__panel-anim">
+              <ul class="nav-dropdown__panel" role="list">
+                {% for app in site.data.apps %}
+                <li>
+                  <a class="nav-dropdown__link" href="{{ app.url | relative_url }}">{{ app.name }}</a>
+                </li>
+                {% endfor %}
+              </ul>
+            </div>
           </details>
         </li>
         <li class="site-nav__item">
