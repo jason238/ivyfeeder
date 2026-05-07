@@ -369,6 +369,7 @@ h4 {
     padding: 0.5rem 1rem;
     text-align: center;
     box-sizing: border-box;
+    font-weight: 600;
   }
 
   .site-nav__item--dropdown .nav-dropdown {
@@ -384,6 +385,8 @@ h4 {
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
+    text-align: center;
+    font-weight: 600;
   }
 
   .nav-dropdown[open] .nav-dropdown__summary {
@@ -415,9 +418,9 @@ h4 {
     min-width: 0;
     max-width: 100%;
     padding: 0.3rem 0;
-    text-align: left;
-    background: rgba(15, 23, 42, 0.88);
-    border: 1px solid rgba(148, 163, 184, 0.2);
+    text-align: center;
+    background: rgba(15, 23, 42, 0.35);
+    border: none;
     border-radius: var(--radius-sm);
     box-shadow: none;
     -webkit-backdrop-filter: blur(10px) saturate(1.1);
@@ -431,17 +434,20 @@ h4 {
   .nav-dropdown__link {
     display: flex;
     align-items: center;
+    justify-content: center;
     min-height: 2.75rem;
     line-height: 1.25;
-    padding: 0.5rem 1rem 0.5rem 15px;
+    padding: 0.5rem 1rem;
     font-size: 0.9375rem;
-    font-weight: 500;
-    text-align: left;
+    font-weight: 400;
+    text-align: center;
     color: rgba(248, 250, 252, 0.88);
+    opacity: 0.8;
     border-radius: var(--radius-sm);
 
     &:hover {
       color: #f8fafc;
+      opacity: 1;
       background: rgba(248, 250, 252, 0.08);
     }
 
@@ -449,6 +455,7 @@ h4 {
       outline: 2px solid #5eead4;
       outline-offset: -2px;
       color: #f8fafc;
+      opacity: 1;
     }
   }
 }
@@ -742,7 +749,8 @@ h4 {
   font-size: clamp(2rem, 5vw, 2.75rem);
   font-weight: 800;
   letter-spacing: -0.02em;
-  line-height: 1.1;
+  line-height: 1.2;
+  padding-bottom: 0.06em;
   color: var(--color-navy);
 
   @supports (background-clip: text) or (-webkit-background-clip: text) {
