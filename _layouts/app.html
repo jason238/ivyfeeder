@@ -79,32 +79,15 @@ layout: default
   </section>
   {% endif %}
 
-  <section class="app-blog-preview" id="blog-preview" aria-labelledby="blog-preview-heading">
+  <section class="app-blog-preview" id="blog" aria-labelledby="blog-heading">
     <div class="app-blog-preview__head">
-      <h2 id="blog-preview-heading" class="app-section-title">From the blog</h2>
-      <a class="app-blog-preview__all" href="{{ blog_url }}">View all posts</a>
+      <h2 id="blog-heading" class="app-section-title">Blog</h2>
     </div>
+    <p class="app-blog-preview__empty">
+      <a class="app-blog-preview__all" href="{{ blog_url }}">Open the {{ page.title }} blog →</a>
+    </p>
     {% if app_posts.size == 0 %}
-    <p class="app-blog-preview__empty muted">No posts yet. Publish Markdown under <code>_posts/</code> with <code>app: {{ page.app_slug }}</code> in the front matter.</p>
-    {% else %}
-    <ul class="app-blog-preview__list">
-      {% for post in app_posts limit:3 %}
-      <li class="app-blog-preview__item">
-        <article class="app-blog-preview__post">
-          <p class="app-blog-preview__meta">
-            <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
-          </p>
-          <h3 class="app-blog-preview__post-title">
-            <a class="app-blog-preview__link" href="{{ post.url | relative_url }}" rel="bookmark">{{ post.title }}</a>
-          </h3>
-          {% assign teaser = post.description | default: post.excerpt | strip_html | truncate: 140 | strip %}
-          {% if teaser != "" %}
-          <p class="app-blog-preview__excerpt">{{ teaser }}</p>
-          {% endif %}
-        </article>
-      </li>
-      {% endfor %}
-    </ul>
+    <p class="muted">No posts yet. Publish Markdown under <code>_posts/</code> with <code>app: {{ page.app_slug }}</code> in the front matter.</p>
     {% endif %}
   </section>
 

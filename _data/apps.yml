@@ -1,17 +1,29 @@
 # Featured apps (home + nav). Add description for each card on the homepage.
-- name: Sample App
+- name: Temper Shield
   slug: sample-app
   url: /apps/sample-app/
   description: Full app landing template with hero, features, screenshots, and blog preview.
-- name: Sample App (Copy)
+- name: Life Recall
+  slug: life-recall
+  url: /apps/life-recall/
+  description: Coming soon—replace this copy with Life Recall’s one-line pitch.
+- name: Time Coin
+  slug: time-coin
+  url: /apps/time-coin/
+  description: Coming soon—replace this copy with Time Coin’s one-line pitch.
+- name: Safe Ping
+  slug: safe-ping
+  url: /apps/safe-ping/
+  description: Coming soon—replace this copy with Safe Ping’s one-line pitch.
+- name: Oops Money
+  slug: oops-money
+  url: /apps/oops-money/
+  description: Coming soon—replace this copy with Oops Money’s one-line pitch.
+- name: Rekindle
+  slug: rekindle
+  url: /apps/rekindle/
+  description: Coming soon—replace this copy with Rekindle’s one-line pitch.
+- name: Coming App
   slug: sample-app-copy
   url: /apps/sample-app-copy/
   description: A second copy of the full Sample App template—customize this one and keep the original as a reference.
-- name: App One
-  slug: app-one
-  url: /apps/app-one/
-  description: A polished placeholder—replace with your hero app’s one-line pitch.
-- name: App Two
-  slug: app-two
-  url: /apps/app-two/
-  description: Second demo product—perfect for testing layouts before you go live.
