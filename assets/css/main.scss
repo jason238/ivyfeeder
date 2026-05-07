@@ -309,7 +309,7 @@ h4 {
   }
 }
 
-// Mobile: full-width dropdown below trigger
+// Mobile / narrow: stack nav so the Apps panel isn’t squeezed beside wrapped links
 @media (max-width: 52rem) {
   .site-header__inner {
     flex-direction: column;
@@ -333,20 +333,58 @@ h4 {
 
   .site-nav {
     width: 100%;
+    max-width: min(100%, 22rem);
+    margin-inline: auto;
   }
 
   .site-nav__list {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 0.15rem;
+    width: 100%;
+  }
+
+  .site-nav__item {
+    width: 100%;
+  }
+
+  .site-nav__link {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+
+  .site-nav__item--dropdown .nav-dropdown {
+    width: 100%;
+  }
+
+  .nav-dropdown__summary {
+    display: flex;
+    width: 100%;
     justify-content: center;
-    gap: 0.35rem;
+    box-sizing: border-box;
+  }
+
+  .nav-dropdown[open] .nav-dropdown__summary {
+    color: var(--color-header-text);
+    background: rgba(248, 250, 252, 0.1);
   }
 
   .nav-dropdown__panel {
     position: static;
     margin-top: 0.35rem;
-    box-shadow: var(--shadow-sm);
-    border: 1px dashed var(--color-border-strong);
     width: 100%;
     min-width: 0;
+    max-width: 100%;
+    box-shadow: var(--shadow-card);
+    border: 1px solid var(--color-border);
+    text-align: left;
+  }
+
+  .nav-dropdown__link {
+    text-align: center;
   }
 }
 
