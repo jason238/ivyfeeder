@@ -1,0 +1,21 @@
+---
+layout: page
+title: Apps
+subtitle: Browse our apps—each has its own page with updates and privacy details.
+description: Explore IvyFeeder apps. Select an app to view its landing page, blog posts, and privacy policy.
+permalink: /apps/
+---
+
+<div class="app-tile-grid">
+  {% for app in site.data.apps %}
+  <article class="app-tile">
+    <div class="app-tile__icon" aria-hidden="true">
+      {% include icon-app-tile.html %}
+    </div>
+    <h2 class="app-tile__name">{{ app.name }}</h2>
+    <p class="app-tile__desc">{{ app.description }}</p>
+    <a class="btn btn--primary" href="{{ app.url | relative_url }}">Open app</a>
+  </article>
+  {% endfor %}
+</div>
+

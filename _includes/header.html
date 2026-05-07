@@ -8,21 +8,8 @@
         <li class="site-nav__item">
           <a class="site-nav__link" href="{{ '/' | relative_url }}" {% if page.url == '/' %}aria-current="page"{% endif %}>Home</a>
         </li>
-        <li class="site-nav__item site-nav__item--dropdown">
-          <details class="nav-dropdown">
-            <summary class="nav-dropdown__summary">
-              <span class="nav-dropdown__label">Apps</span>
-            </summary>
-            <div class="nav-dropdown__panel-anim">
-              <ul class="nav-dropdown__panel" role="list">
-                {% for app in site.data.apps %}
-                <li>
-                  <a class="nav-dropdown__link" href="{{ app.url | relative_url }}">{{ app.name }}</a>
-                </li>
-                {% endfor %}
-              </ul>
-            </div>
-          </details>
+        <li class="site-nav__item">
+          <a class="site-nav__link" href="{{ '/apps/' | relative_url }}" {% if page.url == '/apps/' %}aria-current="page"{% endif %}>Apps</a>
         </li>
         <li class="site-nav__item">
           <a class="site-nav__link" href="{{ '/blog/' | relative_url }}" {% if page.url == '/blog/' or page.layout == 'post' %}aria-current="page"{% endif %}>Blog</a>

@@ -1,7 +1,7 @@
 # Featured apps (home + nav). Add description for each card on the homepage.
 - name: Temper Shield
-  slug: sample-app
-  url: /apps/sample-app/
+  slug: temper-shield
+  url: /apps/temper-shield/
   description: Full app landing template with hero, features, screenshots, and blog preview.
 - name: Life Recall
   slug: life-recall
@@ -24,6 +24,6 @@
   url: /apps/rekindle/
   description: Coming soon—replace this copy with Rekindle’s one-line pitch.
 - name: Coming App
-  slug: sample-app-copy
-  url: /apps/sample-app-copy/
+  slug: coming-app
+  url: /apps/coming-app/
   description: A second copy of the full Sample App template—customize this one and keep the original as a reference.

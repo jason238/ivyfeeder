@@ -3,8 +3,8 @@ title: Step 5 sample post — SEO checklist
 description: >-
   Demonstrates unique title, meta description, optional author override, featured image,
   and clean URL under an app blog path. Replace this copy with a real article.
-app: sample-app
-permalink: /apps/sample-app/blog/step-5-blog-sample/
+app: temper-shield
+permalink: /apps/temper-shield/blog/step-5-blog-sample/
 image: /assets/blog/og-sample.svg
 image_alt: Abstract gradient placeholder for Open Graph and social previews
 ---
