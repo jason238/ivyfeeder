@@ -2,26 +2,32 @@
 - name: Temper Shield
   slug: temper-shield
   url: /apps/temper-shield/
+  icon: /assets/apps/temper-shield/icon.png
   description: Full app landing template with hero, features, screenshots, and blog preview.
 - name: Life Recall
   slug: life-recall
   url: /apps/life-recall/
+  icon: /assets/apps/life-recall/icon.png
   description: Coming soon—replace this copy with Life Recall’s one-line pitch.
 - name: Time Coin
   slug: time-coin
   url: /apps/time-coin/
+  icon: /assets/apps/time-coin/icon.png
   description: Coming soon—replace this copy with Time Coin’s one-line pitch.
 - name: Safe Ping
   slug: safe-ping
   url: /apps/safe-ping/
+  icon: /assets/apps/safe-ping/icon.png
   description: Coming soon—replace this copy with Safe Ping’s one-line pitch.
 - name: Oops Money
   slug: oops-money
   url: /apps/oops-money/
+  icon: /assets/apps/oops-money/icon.png
   description: Coming soon—replace this copy with Oops Money’s one-line pitch.
 - name: Rekindle
   slug: rekindle
   url: /apps/rekindle/
+  icon: /assets/apps/rekindle/icon.png
   description: Coming soon—replace this copy with Rekindle’s one-line pitch.
 - name: Coming App
   slug: coming-app

@@ -9,8 +9,12 @@ permalink: /apps/
 <div class="app-tile-grid">
   {% for app in site.data.apps %}
   <article class="app-tile">
-    <div class="app-tile__icon" aria-hidden="true">
+    <div class="app-tile__icon{% if app.icon %} app-tile__icon--image{% endif %}" aria-hidden="true">
+      {% if app.icon %}
+      <img class="app-tile__icon-img" src="{{ app.icon | relative_url }}" alt="" width="52" height="52" loading="lazy" decoding="async" />
+      {% else %}
       {% include icon-app-tile.html %}
+      {% endif %}
     </div>
     <h2 class="app-tile__name">{{ app.name }}</h2>
     <p class="app-tile__desc">{{ app.description }}</p>
