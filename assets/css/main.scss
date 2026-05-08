@@ -466,6 +466,7 @@ h4 {
 @media (max-width: 48rem) {
   // Hard overrides: ensure mobile stack stays at top (no vertical centering)
   .site-header {
+    padding-top: 15px !important;
     height: auto !important;
     min-height: 0 !important;
   }
@@ -478,31 +479,23 @@ h4 {
     text-align: center !important;
     height: auto !important;
     min-height: 0 !important;
-    padding-top: 0.35rem !important;
+    padding-top: 0 !important;
     padding-bottom: 0.25rem !important;
     gap: 0 !important; // spacing is controlled explicitly below
   }
 
   // Physical rule: logo → first menu item distance = 20px
   .site-logo {
-    margin: -6px auto 0 !important;
-    overflow: hidden !important;
+    margin: 0 auto 0 !important;
+    padding-bottom: 0 !important;
   }
 
   .site-nav {
     width: 100% !important;
     max-width: min(100%, 21rem) !important;
-    margin: 0 auto !important;
+    margin: 10px auto 0 !important;
     height: auto !important;
     min-height: 0 !important;
-  }
-
-  // The raster logo has built-in transparent padding; nudge it up on phones.
-  .site-logo__img--header {
-    height: clamp(3.9rem, 9vw, 4.8rem) !important;
-    transform: translateY(-8px) !important;
-    // Crop bottom transparent padding so it doesn't read as an "empty line"
-    clip-path: inset(0 0 18% 0) !important;
   }
 
   .site-nav__list {
