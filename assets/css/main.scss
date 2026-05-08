@@ -1763,6 +1763,18 @@ h4 {
   margin-bottom: 1.75rem;
 }
 
+.about-hero-image {
+  margin: 0 0 1.5rem;
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 16px;
+    box-shadow: var(--shadow-card);
+  }
+}
+
 .page-title {
   font-size: clamp(1.65rem, 3.5vw, 2.15rem);
   font-weight: 800;
