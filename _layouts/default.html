@@ -37,21 +37,20 @@
       var root = document.documentElement;
       var toggle = document.querySelector('.site-nav-toggle');
       var nav = document.getElementById('site-mobile-nav');
-      var overlay = document.querySelector('[data-nav-overlay]');
-      if (!toggle || !nav || !overlay) return;
+      var closeBtn = document.querySelector('.mobile-nav__close');
+      if (!toggle || !nav || !closeBtn) return;
 
       function setOpen(next) {
         root.classList.toggle('nav-open', next);
         toggle.setAttribute('aria-expanded', next ? 'true' : 'false');
         toggle.setAttribute('aria-label', next ? 'Close menu' : 'Open menu');
-        overlay.hidden = !next;
       }
 
       toggle.addEventListener('click', function () {
         setOpen(!root.classList.contains('nav-open'));
       });
 
-      overlay.addEventListener('click', function () {
+      closeBtn.addEventListener('click', function () {
         setOpen(false);
       });
 
