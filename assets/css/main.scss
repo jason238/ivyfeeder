@@ -483,13 +483,9 @@ h4 {
     gap: 0 !important; // spacing is controlled explicitly below
   }
 
-  .site-logo__img--header {
-    height: clamp(4.35rem, 10vw, 5.35rem) !important;
-  }
-
   // Physical rule: logo → first menu item distance = 20px
   .site-logo {
-    margin: 0 auto 8px !important;
+    margin: -6px auto 2px !important;
   }
 
   .site-nav {
@@ -498,6 +494,12 @@ h4 {
     margin: 0 auto !important;
     height: auto !important;
     min-height: 0 !important;
+  }
+
+  // The raster logo has built-in transparent padding; nudge it up on phones.
+  .site-logo__img--header {
+    height: clamp(3.9rem, 9vw, 4.8rem) !important;
+    transform: translateY(-6px) !important;
   }
 
   .site-nav__list {
