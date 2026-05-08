@@ -168,8 +168,8 @@ h4 {
 }
 
 .site-logo__img--header {
-  height: 76px;
-  max-width: min(100%, 520px);
+  height: 84px;
+  max-width: min(100%, 560px);
 }
 
 /* Black logo background: same blend + same --gradient-chrome as nav/footer for a consistent look */
@@ -333,8 +333,8 @@ h4 {
   }
 
   .site-logo__img--header {
-    height: 62px;
-    max-width: min(100%, 440px);
+    height: clamp(5.25rem, 12vw, 6.5rem);
+    max-width: min(100%, calc(100vw - 2 * var(--space-page)));
   }
 
   .site-logo__img--footer {
@@ -508,6 +508,37 @@ h4 {
   .site-footer__inner {
     grid-template-columns: 1fr;
     gap: 1.75rem;
+  }
+
+  .site-footer__brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .site-footer__logo {
+    justify-content: center;
+  }
+
+  .site-logo__img--footer {
+    margin-inline: auto;
+  }
+
+  .site-footer__follow.followit-site {
+    margin-inline: auto;
+  }
+
+  // Follow.it “Powered by” mark: smaller on phones (desktop keeps 8px)
+  .followit-site
+    .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f]
+    .powered-by-line
+    img,
+  .site-footer__follow.followit-site
+    .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f]
+    .powered-by-line
+    img {
+    max-height: 5px !important;
   }
 }
 

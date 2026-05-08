@@ -4,7 +4,7 @@
 # Site identity (used sitewide and by jekyll-seo-tag)
 title: IvyFeeder Inc.
 # Short phrase for <title> suffix on pages that use the site default (jekyll-seo-tag)
-tagline: Indie mobile app studio
+tagline: Tech Studio
 # Default meta description (keep concise; page-specific `description` overrides per URL)
 description: >-
   Indie mobile app studio — useful iOS & Android apps, daily blog posts, and store links from IvyFeeder Inc.
