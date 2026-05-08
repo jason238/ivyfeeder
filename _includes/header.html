@@ -3,7 +3,20 @@
     <a class="site-logo" href="{{ '/' | relative_url }}">
       <img class="site-logo__img site-logo__img--header" src="{{ '/assets/images/logo-tight2.png' | relative_url }}?v={{ site.time | date: '%s' }}" alt="IvyFeeder Inc." width="400" height="80" decoding="async" />
     </a>
-    <nav class="site-nav" aria-label="Primary">
+
+    <button
+      class="site-nav-toggle"
+      type="button"
+      aria-label="Open menu"
+      aria-expanded="false"
+      aria-controls="site-mobile-nav"
+    >
+      <span class="site-nav-toggle__icon" aria-hidden="true"></span>
+    </button>
+
+    <div class="site-nav-overlay" data-nav-overlay hidden></div>
+
+    <nav class="site-nav" id="site-mobile-nav" aria-label="Primary">
       <ul class="site-nav__list">
         <li class="site-nav__item">
           <a class="site-nav__link" href="{{ '/' | relative_url }}" {% if page.url == '/' %}aria-current="page"{% endif %}>Home</a>
