@@ -567,7 +567,8 @@ h4 {
     top: 0;
     left: 0;
     right: 0;
-    padding: 0.85rem var(--space-page);
+    padding: 1rem var(--space-page);
+    min-height: 72px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -630,7 +631,7 @@ h4 {
   .site-nav__list {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1.7rem;
     width: 100%;
     max-width: 22rem;
   }
@@ -643,16 +644,18 @@ h4 {
     padding: 0.25rem 1rem;
     font-size: 22px;
     font-weight: 600;
+    font-family: var(--font-body);
     color: #f8fafc;
     border-radius: 0;
     background: transparent !important;
+    text-decoration: none !important;
+    border-bottom: none !important;
   }
 
   .site-nav__link[aria-current="page"] {
     background: transparent !important;
-    text-decoration: underline;
-    text-underline-offset: 0.25em;
-    text-decoration-thickness: 2px;
+    text-decoration: none !important;
+    border-bottom: none !important;
   }
 
   // Remove any pill/box styling in overlay context
@@ -660,8 +663,8 @@ h4 {
   .site-nav__link:focus-visible {
     background: transparent !important;
     color: #f8fafc;
-    text-decoration: underline;
-    text-underline-offset: 0.25em;
+    text-decoration: none !important;
+    border-bottom: none !important;
   }
 }
 
