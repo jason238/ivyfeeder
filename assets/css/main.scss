@@ -168,7 +168,7 @@ h4 {
 }
 
 .site-logo__img--header {
-  height: 84px;
+  height: 72px;
   max-width: min(100%, 560px);
 }
 
@@ -395,12 +395,12 @@ h4 {
   }
 
   .site-logo__img--header {
-    height: clamp(5.25rem, 12vw, 6.5rem);
+    height: clamp(4.5rem, 10vw, 5.75rem);
     max-width: min(100%, calc(100vw - 2 * var(--space-page)));
   }
 
   .site-logo__img--footer {
-    height: 62px;
+    height: 54px;
     max-width: min(100%, 440px);
   }
 
@@ -530,6 +530,10 @@ h4 {
     justify-content: space-between;
     gap: 0.75rem;
     align-items: center;
+  }
+
+  .site-logo__img--header {
+    height: 56px;
   }
 
   .site-nav-toggle {
@@ -705,7 +709,7 @@ h4 {
 
 .site-logo__img--footer {
   display: block;
-  height: 76px;
+  height: 64px;
   max-width: min(100%, 520px);
 }
 
