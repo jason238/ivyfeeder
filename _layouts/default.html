@@ -18,9 +18,9 @@
     Cache busting: ensure mobile devices/CDNs pick up new CSS after deploy.
     Use a timestamp-based query string so each build publishes a new URL.
   {% endcomment %}
-  {% assign main_css = '/assets/css/main.css' | relative_url | append: '?v=' | append: site.time | date: '%s' %}
-  <link rel="preload" href="{{ main_css }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="{{ main_css }}"></noscript>
+  {% assign css_version = site.time | date: '%s' %}
+  {% assign main_css = '/assets/css/main.css' | relative_url | append: '?v=' | append: css_version %}
+  <link rel="stylesheet" href="{{ main_css }}">
   {% include seo-structured-data.html %}
   {% feed_meta %}
 </head>
