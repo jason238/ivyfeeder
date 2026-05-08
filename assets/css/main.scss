@@ -490,10 +490,16 @@ h4 {
     padding-bottom: 0 !important;
   }
 
+  // Reduce the header logo height on phones (prevents a large visual gap)
+  .site-logo__img--header {
+    height: 44px !important;
+    max-width: min(100%, calc(100vw - 2 * var(--space-page))) !important;
+  }
+
   .site-nav {
     width: 100% !important;
     max-width: min(100%, 21rem) !important;
-    margin: 10px auto 0 !important;
+    margin: 4px auto 0 !important;
     height: auto !important;
     min-height: 0 !important;
   }
