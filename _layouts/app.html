@@ -94,8 +94,9 @@ layout: default
   <section class="app-cta-bottom" aria-labelledby="cta-bottom-heading">
     <div class="app-cta-bottom__inner">
       <h2 id="cta-bottom-heading" class="app-cta-bottom__title">Get {{ page.title }}</h2>
-      {% if page.tagline %}
-      <p class="app-cta-bottom__tagline">{{ page.tagline }}</p>
+      {% assign cta_blurb = page.cta_tagline | default: page.tagline %}
+      {% if cta_blurb %}
+      <p class="app-cta-bottom__tagline">{{ cta_blurb }}</p>
       {% endif %}
       {% if page.store_ios or page.store_android %}
       {% include app-store-buttons.html ios_url=page.store_ios android_url=page.store_android %}
